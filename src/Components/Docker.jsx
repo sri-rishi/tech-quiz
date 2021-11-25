@@ -1,6 +1,6 @@
 import { Template } from "./template";
 
-export function DeckorQuiz() {
+export function DOckerQuiz() {
     return (
         <div>
             <Template />

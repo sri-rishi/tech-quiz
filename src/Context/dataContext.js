@@ -7,7 +7,7 @@ export function DataProvider({children}) {
     const [data, setData] = useState([]);
     const url = "https://quizapi.io/api/v1/questions";
     const apikey = "6pNezKFK9uocK9GDcTB5WwIcFoewRF54OBOOOoZX";
-    const category = "Linux";
+    const category = "Docker";
 
     useEffect(()=> {
         (async () => {

@@ -25,7 +25,7 @@ export function Template() {
                             {
                                 console.log(Object.values(data[index].answers)),
                             Object.values(data[index].answers).map(item => (
-                                item === null ? "" : <button>{item}</button>
+                                item === null ? "" : <button key={item.id}>{item}</button>
                             )
                             )
                         }

@@ -23,7 +23,6 @@ export function Template() {
                         <h1>{data[index].question}</h1>
                         <div>
                             {
-                                console.log(Object.values(data[index].answers)),
                             Object.values(data[index].answers).map(item => (
                                 item === null ? "" : <button key={item.id}>{item}</button>
                             )

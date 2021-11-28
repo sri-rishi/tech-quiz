@@ -10,7 +10,7 @@ export function Home() {
             <NavBar />
             <div>
                 <Link to="/linux">
-                    <button onClick={() => dispatch({type: "LINUX"})}>Linux</button>
+                    <button onClick={() => dispatch({type: "LINUX"}) }>Linux</button>
                 </Link>
                 <Link to="/devops" >
                     <button onClick={() => dispatch({type: "DEVOPS"})}>DevOps</button>

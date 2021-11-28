@@ -5,25 +5,30 @@ export const DataContext = createContext();
 
 export function DataProvider({children}) {
     const [data, setData] = useState([]);
-    const [{categoryParam}, dispatch] = useReducer(dataReducer, {categoryParam: ""}) 
+    const [{categoryParam, selectedValues}, dispatch] = useReducer(dataReducer, {categoryParam: "", selectedValues: []}) 
     const url = "https://quizapi.io/api/v1/questions";
     const apikey = "6pNezKFK9uocK9GDcTB5WwIcFoewRF54OBOOOoZX";
-    const category = categoryParam;
+    
 
     useEffect(()=> {
         (async () => {
-            const response = await axios.get(`${url}?apiKey=${apikey}&limit=5&category=${category}`);
+            const response = await axios.get(`${url}?apiKey=${apikey}&limit=5&category=${categoryParam}`);
             console.log(response.data)
-            if(category !== "")  {
+            if(categoryParam !== "")  {
                 setData(response.data);
             }
-            
         })()
-    }, [category])
+    }, [categoryParam]);
 
+
+    // useEffect(() => {
+    //     return () => dataReducer() 
+    // }, [categoryParam]);
+
+    console.log(selectedValues);
 
     return (
-        <DataContext.Provider value={{data, dispatch}}>
+        <DataContext.Provider value={{data, dispatch, selectedValues, categoryParam}}>
             {children}
         </DataContext.Provider>
     )
@@ -49,9 +54,27 @@ function dataReducer(state, action) {
                 ...state, 
                 categoryParam: "Linux"
             }
+        
+        case "SELECTED":
+            return {
+                ...state, 
+                selectedValues: state.selectedValues.concat(action.payload)
+            }
 
-            default:
-                return state;
+        case "RESET_QUIZ":
+            return {
+                ...state,
+                selectedValues: [],
+            }
+        
+        case "EXIT_PAGE":
+            return{
+                ...state,
+                categoryParam: state.categoryParam
+            }
+
+        default:
+            return state;
     }
 }
 

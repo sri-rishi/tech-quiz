@@ -20,11 +20,6 @@ export function DataProvider({children}) {
         })()
     }, [categoryParam]);
 
-
-    // useEffect(() => {
-    //     return () => dataReducer() 
-    // }, [categoryParam]);
-
     console.log(selectedValues);
 
     return (
@@ -64,15 +59,9 @@ function dataReducer(state, action) {
         case "RESET_QUIZ":
             return {
                 ...state,
-                selectedValues: [],
+                selectedValues: []
             }
-        
-        case "EXIT_PAGE":
-            return{
-                ...state,
-                categoryParam: state.categoryParam
-            }
-
+            
         default:
             return state;
     }

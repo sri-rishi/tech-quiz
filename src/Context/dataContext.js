@@ -5,10 +5,10 @@ export const DataContext = createContext();
 
 export function DataProvider({children}) {
     const [data, setData] = useState([]);
-    const [{categoryParam, selectedValues}, dispatch] = useReducer(dataReducer, {categoryParam: "", selectedValues: []}) 
+    const [index , setIndex] = useState(0);
+    const [{categoryParam, selectedValues, correctValues}, dispatch] = useReducer(dataReducer, {categoryParam: "", selectedValues: [], correctValues: []}) 
     const url = "https://quizapi.io/api/v1/questions";
     const apikey = "6pNezKFK9uocK9GDcTB5WwIcFoewRF54OBOOOoZX";
-    
 
     useEffect(()=> {
         (async () => {
@@ -20,10 +20,12 @@ export function DataProvider({children}) {
         })()
     }, [categoryParam]);
 
-    console.log(selectedValues);
+    console.log("this is selected values", selectedValues);
+    console.log("this is correct values", correctValues);
+    
 
     return (
-        <DataContext.Provider value={{data, dispatch, selectedValues, categoryParam}}>
+        <DataContext.Provider value={{data, dispatch, correctValues, selectedValues, categoryParam, index, setIndex}}>
             {children}
         </DataContext.Provider>
     )
@@ -59,9 +61,17 @@ function dataReducer(state, action) {
         case "RESET_QUIZ":
             return {
                 ...state,
-                selectedValues: []
+                selectedValues: [],
+                correctValues: []
             }
-            
+        
+        case "CORRECT_ANSWERS":
+            return {
+                ...state,
+                correctValues: state.correctValues.concat(action.payload)
+            }
+
+        
         default:
             return state;
     }

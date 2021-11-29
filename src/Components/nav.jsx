@@ -8,6 +8,9 @@ export function NavBar() {
             <NavLink to="/" >
                 <button onClick={() => dispatch({type: "RESET_QUIZ"})}>Home</button>
             </NavLink>
+            <NavLink to="/result" >
+                <button>result</button>
+            </NavLink>
         </div>
     )
 }

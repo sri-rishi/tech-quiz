@@ -1,7 +1,7 @@
 import { NavBar } from "./nav";
 import { Template } from "./template";
 
-export function DOckerQuiz() {
+export function DockerQuiz() {
     return (
         <div>
             <NavBar />

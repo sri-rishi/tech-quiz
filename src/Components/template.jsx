@@ -1,23 +1,31 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 
 
-
-
 export function Template() {
-    const [index , setIndex] = useState(0);
-    const {data, dispatch} = useData();
+    const {data, dispatch, index, setIndex} = useData();
     const [isClickable, setIsClickable] = useState(true);
-    
-   
+    const navigate = useNavigate();
+    let correct_Answers;
 
     function handleSubmit() {
         setIsClickable(true);
         if(index >= data.length - 1) {
-            alert("You have reached to end of quiz");
+            navigate("/result")
         }else {
             setIndex(val => val + 1);
         }
+        dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
+    }
+    
+    function correctAnswers(arr1, arr2) {
+        let idx = arr1.findIndex(el => el === "true");
+        return arr2[idx];
+    }
+    
+    if(data.length) {
+       correct_Answers =  correctAnswers(Object.values(data[index].correct_answers), Object.values(data[index].answers));;
     }
 
     return (
@@ -43,7 +51,11 @@ export function Template() {
                         </div>
                     </div>
 
-                    <button onClick={() => handleSubmit()}>Submit</button>
+                    <button onClick={() => {
+                        handleSubmit()
+                        
+                    }
+                    }>Submit</button>
                     <button onClick={() => {
                         setIndex(0);
                         dispatch({type: "RESET_QUIZ"})

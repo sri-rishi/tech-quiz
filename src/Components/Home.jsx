@@ -13,10 +13,10 @@ export function Home() {
                     <button onClick={() => dispatch({ type: "LINUX"} ) }>Linux</button>
                 </Link>
                 <Link to="/devops" >
-                    <button onClick={() => dispatch("DEVOPS")}>DevOps</button>
+                    <button onClick={() => dispatch({type: "DEVOPS"})}>DevOps</button>
                 </Link>
                 <Link to="docker">
-                    <button onClick={()=> dispatch("DOCKER")}>Docker</button>
+                    <button onClick={()=> dispatch({type: "DOCKER"})}>Docker</button>
                 </Link>
             </div>
         </div>

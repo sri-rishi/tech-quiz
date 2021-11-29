@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { DevOpsQuiz } from './Components/DevOps';
-import { DOckerQuiz } from './Components/Docker';
+import { DockerQuiz } from './Components/Docker';
 import { Home } from './Components/Home';
 import { LinuxQuiz } from './Components/Linux';
+import {Result} from './Components/result'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/linux" element={<LinuxQuiz />} />
         <Route path= "/devops" element={<DevOpsQuiz />} />
-        <Route path= "/docker" element={<DOckerQuiz />} />
+        <Route path= "/docker" element={<DockerQuiz />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </div>
   );

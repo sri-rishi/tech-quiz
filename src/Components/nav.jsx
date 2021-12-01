@@ -5,11 +5,11 @@ export function NavBar() {
     const {dispatch} = useData()
     return (
         <div>
+            <div >
+                <h1><span>T</span><span>ech</span> <span>Q</span><span>uiz</span></h1>
+            </div>
             <NavLink to="/" >
                 <button onClick={() => dispatch({type: "RESET_QUIZ"})}>Home</button>
-            </NavLink>
-            <NavLink to="/result" >
-                <button>result</button>
             </NavLink>
         </div>
     )

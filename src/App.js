@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import './App.css';
 import { DevOpsQuiz } from './Components/DevOps';
 import { DockerQuiz } from './Components/Docker';

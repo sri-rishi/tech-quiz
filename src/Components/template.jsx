@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 
 
 export function Template() {
-    const {data, dispatch, index, setIndex} = useData();
+    const {data, dispatch, index, setIndex, selectedValues} = useData();
     const [isClickable, setIsClickable] = useState(true);
+    const [bgColor, setBgColor] = useState("gray");
+    // const [timer, setTimer] = useState(60);
     const navigate = useNavigate();
     let correct_Answers;
+    
 
     function handleSubmit() {
         setIsClickable(true);
@@ -18,14 +21,42 @@ export function Template() {
         }
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
+
+    // useEffect(() => {
+    //     const timeOut = setInterval(() => handleSubmit(), 59000);
+    //     return () => clearInterval(timeOut);
+    // })
+
+    // useEffect(()=> {
+    //     const time = setInterval(() => {
+    //         if(timer === 0) {
+    //             return null
+    //         }
+    //         setTimer(time => time - 1); 
+    //     }, 1000) 
+    //     return () => clearInterval(time)
+    // })
+
+    function handleAnswerCilck(val) {
+        setIsClickable(false)
+        dispatch({type: "SELECTED", payload: val}) 
+        if(val === correct_Answers) {
+            setBgColor("green");
+        }else {
+            setBgColor("red");
+        }
+
+        console.log(bgColor);
+    }
     
     function correctAnswers(arr1, arr2) {
         let idx = arr1.findIndex(el => el === "true");
         return arr2[idx];
     }
-    
+        
     if(data.length) {
-       correct_Answers =  correctAnswers(Object.values(data[index].correct_answers), Object.values(data[index].answers));;
+       correct_Answers =  correctAnswers(Object.values(data[index].correct_answers), Object.values(data[index].answers));
+    //    console.log("this is correctanswer",  correct_Answers)
     }
 
     return (
@@ -40,22 +71,20 @@ export function Template() {
                             Object.values(data[index].answers).map((item) => (
                                 item === null ? "" : 
                                 <button
-                                    onClick={() =>  {
-                                    setIsClickable(false)
-                                    dispatch({type: "SELECTED", payload: item}) 
-                                }}
-                                disabled={!isClickable}>{item}</button>
+                                key={item}
+                                    onClick={() => handleAnswerCilck(item)}
+                                    style={{backgroundColor : item === selectedValues[index] ? bgColor : "gray"}}
+                                disabled={!isClickable}
+                                >
+                                    {item}
+                                </button>
                             )
                             )
                         }
                         </div>
                     </div>
-
-                    <button onClick={() => {
-                        handleSubmit()
-                        
-                    }
-                    }>Submit</button>
+                    {/* <div>{timer}</div> */}
+                    <button onClick={() => handleSubmit()}>Submit</button>
                     <button onClick={() => {
                         setIndex(0);
                         dispatch({type: "RESET_QUIZ"})

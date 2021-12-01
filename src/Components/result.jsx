@@ -10,8 +10,8 @@ export function Result() {
     }
 
     // function backColor(arr1, arr2, arr3) {
-    //    return arr1.forEach( el => arr3.includes(el) ? "red" : "")
-    //     // console.log(arr3)
+    // //    return arr1.forEach( el => arr3.includes(el) ? "red" : "")
+    //     console.log(arr3)
     // }
     // console.log(correctValues[index])
 

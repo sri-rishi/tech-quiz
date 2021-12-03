@@ -6,15 +6,15 @@ export function NavBar() {
     return (
         <div >
             
-                <NavLink to="/">
-                <div className="title">
-                    <div className="tech-title">
-                        <span className="tech-t">T</span><span className="tech-left">ech</span>
-                    </div>
-                    <div>
-                        <span >Q</span><span >uiz</span>
-                    </div>
-                </div>
+                <NavLink to="/" style={{textDecoration: "none"}}>
+                    <h1 className="title">
+                        <div className="title__tech-title">
+                                <span className="tech-t">T</span><span className="tech-left">ech</span>
+                        </div>
+                        <div>
+                            <span >Q</span><span >uiz</span>
+                        </div>
+                    </h1>
                 </NavLink>
            
             <NavLink to="/" >

@@ -1,5 +1,5 @@
 import { Routes, Route} from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import { DevOpsQuiz } from './Components/DevOps';
 import { DockerQuiz } from './Components/Docker';
 import { Home } from './Components/Home';

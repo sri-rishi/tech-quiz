@@ -8,7 +8,7 @@ export function Home() {
     return (
         <div className="body">
             <NavBar />
-            <div>
+            <div className="home">
                 <Link to="/linux">
                     <button onClick={() => dispatch({ type: "LINUX"} ) }>Linux</button>
                 </Link>

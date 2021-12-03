@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
+import { Timer } from "./Timer";
 
 
 export function Template() {
     const {data, dispatch, index, setIndex, selectedValues} = useData();
     const [isClickable, setIsClickable] = useState(true);
     const [bgColor, setBgColor] = useState("gray");
-    // const [timer, setTimer] = useState(60);
     const navigate = useNavigate();
     let correct_Answers;
     
@@ -22,21 +22,12 @@ export function Template() {
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
 
-    // useEffect(() => {
-    //     const timeOut = setInterval(() => handleSubmit(), 59000);
-    //     return () => clearInterval(timeOut);
-    // })
+    useEffect(() => {
+        const timeOut = setInterval(() => handleSubmit(), 60000);
+        return () => clearInterval(timeOut);
+    })
 
-    // useEffect(()=> {
-    //     const time = setInterval(() => {
-    //         if(timer === 0) {
-    //             return null
-    //         }
-    //         setTimer(time => time - 1); 
-    //     }, 1000) 
-    //     return () => clearInterval(time)
-    // })
-
+    
     function handleAnswerCilck(val) {
         setIsClickable(false)
         dispatch({type: "SELECTED", payload: val}) 
@@ -83,7 +74,7 @@ export function Template() {
                         }
                         </div>
                     </div>
-                    {/* <div>{timer}</div> */}
+                    <Timer />
                     <button onClick={() => handleSubmit()}>Submit</button>
                     <button onClick={() => {
                         setIndex(0);

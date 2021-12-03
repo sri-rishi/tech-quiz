@@ -6,7 +6,7 @@ export function Home() {
     const {dispatch} = useData();
 
     return (
-        <div>
+        <div className="body">
             <NavBar />
             <div>
                 <Link to="/linux">

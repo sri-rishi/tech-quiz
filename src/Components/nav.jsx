@@ -7,14 +7,7 @@ export function NavBar() {
         <div >
             
                 <NavLink to="/" style={{textDecoration: "none"}}>
-                    <h1 className="title">
-                        <div className="title__tech-title">
-                                <span className="tech-t">T</span><span className="tech-left">ech</span>
-                        </div>
-                        <div>
-                            <span >Q</span><span >uiz</span>
-                        </div>
-                    </h1>
+                    <img src="../../images\logo.png" alt="logo-image"/>
                 </NavLink>
            
             <NavLink to="/" >

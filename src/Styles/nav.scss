@@ -7,6 +7,9 @@
     align-items: center;
 }
 
+@function map-Value($key, $value) {
+    @return map-get($key, $value)
+};
 
 
 .navbar {
@@ -16,6 +19,7 @@
     .link-div {
         @include dispaly-flex;
         width: 60%;
+        max-width: 280px;
         gap: 10px;
         padding: 1rem;
 
@@ -37,13 +41,13 @@
                 background: transparent;
                 outline: none;
                 border: none;
-                font-weight: map-get($font-weights, "semi-bold" );
+                font-weight: map-Value($font-weights, "medium");
                 font-size: 1.3rem;
-                color: map-get($font-color, "navLink-color");
+                color: map-Value($font-color,"navLink-color");
 
                 &:hover {
-                    background-color: map-get($font-color, "navLink-hover-color");
-                    color: map-get($font-color, "white");;
+                    background-color: map-Value($font-color, "navLink-hover-color");
+                    color: map-Value($font-color, "white");;
                     border-radius: 20%;
                     padding: 6px 10px;
                 }

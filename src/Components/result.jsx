@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {useData} from "../Context/dataContext";
+import { NavBar } from "./nav";
 
 export function Result() {
     const {selectedValues, correctValues} = useData();
@@ -21,6 +22,7 @@ export function Result() {
     
     return (
         <div>
+            <NavBar />
             <div>
                 <h2>Your Result</h2>
                 <div>

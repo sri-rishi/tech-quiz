@@ -1,0 +1,29 @@
+@import "./variables";
+
+.cover-div {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 1rem;
+
+    & .cover-image-div {
+        width: 100%;
+    
+        & .cover-image {
+            width: 100%;
+        }
+    }
+
+    & .cover-text {
+        // color: map-get($font-color , "navLink-color" );
+        color: #787A91;
+        text-align: center;
+        margin-top: -5px;
+        line-height: 2.2rem;
+
+        & .cover-subLine {
+            font-size: 20px;
+            line-height: 2rem;
+            font-weight: map-get($font-weights,  "medium");
+        }
+    }
+}

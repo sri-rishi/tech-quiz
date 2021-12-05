@@ -43,10 +43,10 @@
                 border: none;
                 font-weight: map-Value($font-weights, "medium");
                 font-size: 1.3rem;
-                color: map-Value($font-color,"navLink-color");
+                color: map-Value($font-color,"dark-gray");
 
                 &:hover {
-                    background-color: map-Value($font-color, "navLink-hover-color");
+                    background-color: map-Value($font-color, "shine-light-blue");
                     color: map-Value($font-color, "white");;
                     border-radius: 20%;
                     padding: 6px 10px;

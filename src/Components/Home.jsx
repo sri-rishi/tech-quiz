@@ -8,6 +8,15 @@ export function Home() {
     return (
         <div style={{width: "100%"}} className="body">
             <NavBar />
+            <div className="cover-div">
+                <div className="cover-text">
+                    <h1 className="cover-line">I'm not a great programmer; I'm just a good programmer with great habits.</h1>
+                    <p className="cover-subLine">Take quiz to know how well you know these things.</p>
+                </div>
+                <div className="cover-image-div">
+                    <img className="cover-image" src="../../images\cover_img.jpg"  alt="women finding solution"/>
+                </div>
+            </div>
             <div className="">
                 <Link to="/linux">
                     <button onClick={() => dispatch({ type: "LINUX"} ) }>Linux</button>

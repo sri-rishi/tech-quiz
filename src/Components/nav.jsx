@@ -8,7 +8,7 @@ export function NavBar() {
             <div className="link-div">
                 <NavLink to="/" style={{textDecoration: "none"}}>
                     <div className="logo-div">
-                        <img className="logo-image" src="../../images\logo.png" alt="logo-image"/>
+                        <img className="logo-image" src="../../images\logo.png" alt="logo"/>
                     </div>
                 </NavLink>
             

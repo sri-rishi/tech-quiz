@@ -10,5 +10,9 @@ $font-color: (
     "white": white, 
     "navLink-color": #423F3E,
     "navLink-hover-color": #04009A 
-)
+);
 
+$break-points: (
+    "tab-view": 450px,
+    "desktop-view": 748px
+)

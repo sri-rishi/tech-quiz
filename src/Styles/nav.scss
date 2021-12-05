@@ -10,24 +10,28 @@
 
 
 .navbar {
-
+    margin: 0.5rem 0;
+    box-shadow: 3px 3px 4px rgb(161, 148, 148);
+    
     .link-div {
         @include dispaly-flex;
         width: 60%;
         gap: 10px;
+        padding: 1rem;
 
         & .logo-div {
             width: 100%;
     
             & .logo-image {
                 @extend .logo-div;
+                max-width: 196px;
+                min-width: 150px;
             }
         }
         
         & .home-div {
             @include dispaly-flex;
             margin-bottom: 10px;
-            padding: 2px;
 
             & .btn-home {
                 background: transparent;

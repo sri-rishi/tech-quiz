@@ -3,8 +3,16 @@
 @import "./nav";
 @import "./variables";
 
+
+body {
+    margin: 0;
+}
+
 .App {
     font-family: $font-family;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 button {

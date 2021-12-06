@@ -3,27 +3,56 @@
 .cover-div {
     display: flex;
     flex-direction: column-reverse;
-    padding: 0 1rem;
+    padding:  1rem;
+    gap: 10px;
+    @media(min-width: map-Value($break-points, "desktop-breakpoint")) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 2rem 4rem;
+    }
+
+    @media(min-width: map-Value($break-points, "wide-breakpoint")) {
+        padding: 2rem 8rem;
+    }
 
     & .cover-image-div {
         width: 100%;
-    
+
+        @media(min-width: map-Value($break-points, "tab-breakpoint")) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        @media(min-width: map-Value($break-points, "wide-breakpoint")) {
+            padding:0 3rem;
+        }
+
         & .cover-image {
             width: 100%;
         }
     }
 
     & .cover-text {
-        // color: map-get($font-color , "navLink-color" );
-        color: #787A91;
+        color: map-Value($font-color , "light-skyBlue" );
         text-align: center;
-        margin-top: -5px;
         line-height: 2.2rem;
+        @media(min-width: map-Value($break-points, "tab-breakpoint")) {
+            padding: 0 2rem;
+        }
+        @media(min-width: map-Value($break-points, "desktop-breakpoint")) {
+            width: 50%;
+            padding: 0;
+            font-size: 20px;
+            line-height: 3.5rem;
+        }
 
         & .cover-subLine {
-            font-size: 20px;
+            font-size: 25px;
             line-height: 2rem;
-            font-weight: map-get($font-weights,  "medium");
+            font-weight: map-Value($font-weights,  "semi-bold");
         }
     }
 }

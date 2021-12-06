@@ -29,10 +29,6 @@
         @media(min-width: map-Value($break-points, "wide-breakpoint")) {
             padding:0 3rem;
         }
-
-        & .cover-image {
-            width: 100%;
-        }
     }
 
     & .cover-text {
@@ -56,3 +52,5 @@
         }
     }
 }
+
+

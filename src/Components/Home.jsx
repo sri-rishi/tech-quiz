@@ -17,16 +17,25 @@ export function Home() {
                     <img className="cover-image" src="../../images\cover_img.jpg"  alt="women finding solution"/>
                 </div>
             </div>
-            <div className="">
-                <Link to="/linux">
-                    <button onClick={() => dispatch({ type: "LINUX"} ) }>Linux</button>
-                </Link>
-                <Link to="/devops" >
-                    <button onClick={() => dispatch({type: "DEVOPS"})}>DevOps</button>
-                </Link>
-                <Link to="docker">
-                    <button onClick={()=> dispatch({type: "DOCKER"})}>Docker</button>
-                </Link>
+            <div className="dashboard-div">
+                <h1 className="dashboard">Dashboard</h1>
+                <div className="quiz-list">
+                    <Link to="/linux">
+                        <button onClick={() => dispatch({ type: "LINUX"} ) }>
+                            <img src="../../images/linux-cover.png" alt="linux cover" />
+                        </button>
+                    </Link>
+                    <Link to="/devops" >
+                        <button onClick={() => dispatch({type: "DEVOPS"})}>
+                            <img src="../../images/devOps-cover.jfif" alt="devops cover" />
+                        </button>
+                    </Link>
+                    <Link to="docker">
+                        <button onClick={()=> dispatch({type: "DOCKER"})}>
+                            <img src="../../images/docker-cover.png" alt="docker cover" />
+                        </button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

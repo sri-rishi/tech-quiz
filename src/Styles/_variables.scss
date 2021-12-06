@@ -10,10 +10,16 @@ $font-color: (
     "white": white, 
     "dark-gray": #423F3E,
     "shine-light-blue": #04009A,
-    "light-gray": #787A91
+    "light-gray": #787A91,
+    "light-skyBlue": #97BFB4
 );
 
 $break-points: (
     "tab-breakpoint": 450px,
-    "desktop-breakpoint": 748px
-)
+    "desktop-breakpoint": 850px,
+    "wide-breakpoint": 1180px
+);
+
+@function map-Value($key, $value) {
+    @return map-get($key, $value)
+};

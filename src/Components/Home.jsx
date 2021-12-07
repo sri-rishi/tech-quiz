@@ -27,7 +27,7 @@ export function Home() {
                     </Link>
                     <Link to="/devops" >
                         <button onClick={() => dispatch({type: "DEVOPS"})}>
-                            <img src="../../images/devOps-cover.jfif" alt="devops cover" />
+                            <img src="../../images/devOps-cover.png" alt="devops cover" />
                         </button>
                     </Link>
                     <Link to="docker">

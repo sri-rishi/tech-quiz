@@ -1,11 +1,5 @@
 @import "./variables";
-
-
-@mixin dispaly-flex{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-}
+@import './functions&mixin';
 
 .navbar {
     margin: 0.5rem 0;

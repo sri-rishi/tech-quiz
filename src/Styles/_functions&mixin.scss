@@ -1,0 +1,9 @@
+@function map-Value($key, $value) {
+    @return map-get($key, $value)
+};
+
+@mixin dispaly-flex{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+};

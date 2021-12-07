@@ -21,17 +21,17 @@ export function Home() {
                 <h1 className="dashboard">Dashboard</h1>
                 <div className="quiz-list">
                     <Link to="/linux">
-                        <button onClick={() => dispatch({ type: "LINUX"} ) }>
+                        <button className="linux-cover" onClick={() => dispatch({ type: "LINUX"} ) }>
                             <img src="../../images/linux-cover.png" alt="linux cover" />
                         </button>
                     </Link>
                     <Link to="/devops" >
-                        <button onClick={() => dispatch({type: "DEVOPS"})}>
+                        <button className="devops-cover" onClick={() => dispatch({type: "DEVOPS"})}>
                             <img src="../../images/devOps-cover.png" alt="devops cover" />
                         </button>
                     </Link>
                     <Link to="docker">
-                        <button onClick={()=> dispatch({type: "DOCKER"})}>
+                        <button className="docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
                             <img src="../../images/docker-cover.png" alt="docker cover" />
                         </button>
                     </Link>

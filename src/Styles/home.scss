@@ -70,12 +70,16 @@
         margin: 2rem 1rem;
         display: grid;
         grid-template-rows: auto auto auto;
-
+        gap: 2rem;
+        
         & .quiz-covers{
             @include noBordr-button;
             width: 100%;
+
+            & .cover-img {
+                border-radius: 50px;
+            }
         }
-        
     }
 }
 

@@ -22,17 +22,17 @@ export function Home() {
                 <div className="quiz-list">
                     <Link to="/linux">
                         <button className="quiz-covers linux-cover" onClick={() => dispatch({ type: "LINUX"} ) }>
-                            <img className="cover-img" src="../../images/linux-cover.png" alt="linux cover" />
+                            <img  src="../../images/linux-cover.png" alt="linux cover" />
                         </button>
                     </Link>
                     <Link to="docker">
                         <button className="quiz-covers docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
-                            <img className="cover-img"  src="../../images/docker-cover.png" alt="docker cover" />
+                            <img  src="../../images/docker-cover.png" alt="docker cover" />
                         </button>
                     </Link>
                     <Link to="/devops" >
                         <button className="quiz-covers devops-cover" onClick={() => dispatch({type: "DEVOPS"})}>
-                            <img className="cover-img" src="../../images/devops-cover.png" alt="devops cover" />
+                            <img src="../../images/devops-cover.png" alt="devops cover" />
                         </button>
                     </Link>
                 </div>

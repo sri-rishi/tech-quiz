@@ -21,18 +21,18 @@ export function Home() {
                 <h1 className="dashboard">Dashboard</h1>
                 <div className="quiz-list">
                     <Link to="/linux">
-                        <button className="linux-cover" onClick={() => dispatch({ type: "LINUX"} ) }>
+                        <button className="quiz-covers linux-cover" onClick={() => dispatch({ type: "LINUX"} ) }>
                             <img src="../../images/linux-cover.png" alt="linux cover" />
                         </button>
                     </Link>
-                    <Link to="/devops" >
-                        <button className="devops-cover" onClick={() => dispatch({type: "DEVOPS"})}>
-                            <img src="../../images/devOps-cover.png" alt="devops cover" />
+                    <Link to="docker">
+                        <button className="quiz-covers docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
+                            <img src="../../images/docker-cover.png" alt="docker cover" />
                         </button>
                     </Link>
-                    <Link to="docker">
-                        <button className="docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
-                            <img src="../../images/docker-cover.png" alt="docker cover" />
+                    <Link to="/devops" >
+                        <button className="quiz-covers devops-cover" onClick={() => dispatch({type: "DEVOPS"})}>
+                            <img src="../../images/devops-cover.png" alt="devops cover" />
                         </button>
                     </Link>
                 </div>

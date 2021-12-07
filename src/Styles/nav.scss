@@ -27,9 +27,7 @@
             margin-bottom: 10px;
 
             & .btn-home {
-                background: transparent;
-                outline: none;
-                border: none;
+                @include noBordr-button;
                 font-weight: map-Value($font-weights, "medium");
                 font-size: 1.3rem;
                 color: map-Value($font-color,"dark-gray");

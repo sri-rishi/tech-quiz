@@ -11,7 +11,8 @@ $font-color: (
     "dark-gray": #423F3E,
     "shine-light-blue": #04009A,
     "light-gray": #787A91,
-    "light-skyBlue": #97BFB4
+    "light-skyBlue": #97BFB4,
+    "medium-gray": #1F1D36
 );
 
 $break-points: (
@@ -20,6 +21,4 @@ $break-points: (
     "wide-breakpoint": 1180px
 );
 
-@function map-Value($key, $value) {
-    @return map-get($key, $value)
-};
+

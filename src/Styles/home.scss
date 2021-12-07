@@ -56,9 +56,27 @@
 
 
 .dashboard-div {
-    display: flex;
+    @include dispaly-flex;
     flex-direction: column;
-    justify-content: center;
+    margin: 1rem auto;
+
+    & .dashboard {
+        color: map-Value($font-color, "medium-gray");
+        text-decoration: underline;
+        font-size: 2.5rem;
+    }
+
+    & .quiz-list {
+        margin: 2rem 1rem;
+        display: grid;
+        grid-template-rows: auto auto auto;
+
+        & .quiz-covers{
+            @include noBordr-button;
+            width: 100%;
+        }
+        
+    }
 }
 
 

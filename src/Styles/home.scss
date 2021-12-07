@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./functions&mixin";
 
 .cover-div {
     display: flex;
@@ -51,6 +52,13 @@
             font-weight: map-Value($font-weights,  "semi-bold");
         }
     }
+}
+
+
+.dashboard-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 

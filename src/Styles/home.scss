@@ -69,14 +69,25 @@
         margin: 2rem 1rem;
         display: grid;
         grid-template-rows: auto auto auto;
-        gap: 2rem;
+        gap: 4rem;
+
+        @media(min-width: map-Value($break-points, "desktop-breakpoint") ) {
+            grid-template-columns: auto auto auto;
+        }
         
         & .quiz-links {
             width: 75%;
+            max-width: 500px;
+            min-height: 338px;
             margin: auto;
             border: 1px solid gray;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 8px 8px 4px map-Value($font-color, 'shady-yellow');
+
+            &:hover {
+                box-shadow: 0 16px 16px 8px map-Value($font-color, 'shady-yellow');
+            }
 
             & .quiz-img-link {
                 @include noBorder-button;
@@ -88,6 +99,20 @@
                 grid-template-columns: auto auto;
                 gap: 20px;
                 padding: 0 10px;
+                font-size: 1.3rem;
+                font-weight: map-Value($font-weights, "semi-bold");
+                color: map-Value($font-color, "light-gray");
+
+                & .btn-play {
+                    @include noBorder-button;
+                    font-size: 1.1rem;
+                    font-weight: map-Value($font-weights, "medium");
+                    background-color:map-Value($font-color, "shady-yellow");
+                    color: map-Value($font-color, "white");
+                    border-radius: 10px;
+                    padding: 7px 15px;
+                    box-shadow: 4px 4px 4px gray;
+                }
             }
         }
     }

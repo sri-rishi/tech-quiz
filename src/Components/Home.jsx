@@ -29,7 +29,7 @@ export function Home() {
                         <div className="quiz-captions linux-caption">
                             <p>Check how much you know about Linux</p>
                             <Link to="/linux">
-                                <button className="btn-play" onClick={() => dispatch({ type: "LINUX"} ) }>
+                                <button className="btn-play linux-btn" onClick={() => dispatch({ type: "LINUX"} ) }>
                                     Play Quiz   
                                 </button>
                             </Link>
@@ -45,7 +45,7 @@ export function Home() {
                         <div className="quiz-captions linux-caption">
                             <p>Check how much you know about Docker</p>
                             <Link to="/docker">
-                            <button className="quiz-covers docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
+                            <button className="btn-play docker-btn" onClick={()=> dispatch({type: "DOCKER"})}>
                                 Play Quiz
                             </button>
                             </Link>
@@ -61,7 +61,7 @@ export function Home() {
                         <div className="quiz-captions linux-caption">
                             <p>Check how much you know about DevOps</p>
                             <Link to="/devops">
-                            <button className="quiz-covers docker-cover" onClick={() => dispatch({type: "DEVOPS"})}>
+                            <button className="btn-play devops-btn" onClick={() => dispatch({type: "DEVOPS"})}>
                                 Play Quiz
                             </button>
                             </Link>

@@ -20,21 +20,53 @@ export function Home() {
             <div className="dashboard-div">
                 <h1 className="dashboard">Dashboard</h1>
                 <div className="quiz-list">
-                    <Link to="/linux">
-                        <button className="quiz-covers linux-cover" onClick={() => dispatch({ type: "LINUX"} ) }>
-                            <img  src="../../images/linux-cover.png" alt="linux cover" />
-                        </button>
-                    </Link>
-                    <Link to="docker">
-                        <button className="quiz-covers docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
+                    <div className="quiz-links linux-quiz">
+                        <Link to="/linux">
+                            <button className="quiz-img-link" onClick={() => dispatch({ type: "LINUX"} ) }>
+                                <img src="../../images/linux-cover.png" alt="linux cover" />
+                            </button>
+                        </Link>
+                        <div className="quiz-captions linux-caption">
+                            <p>Check how much you know about Linux</p>
+                            <Link to="/linux">
+                                <button className="btn-play" onClick={() => dispatch({ type: "LINUX"} ) }>
+                                    Play Quiz   
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="quiz-links docker-quiz">
+                        <Link to="/docker" >
+                            <button className="quiz-img-link" onClick={()=> dispatch({type: "DOCKER"})}>   
                             <img  src="../../images/docker-cover.png" alt="docker cover" />
-                        </button>
-                    </Link>
-                    <Link to="/devops" >
-                        <button className="quiz-covers devops-cover" onClick={() => dispatch({type: "DEVOPS"})}>
+                            </button>
+                            </Link>
+                        <div className="quiz-captions linux-caption">
+                            <p>Check how much you know about Docker</p>
+                            <Link to="/docker">
+                            <button className="quiz-covers docker-cover" onClick={()=> dispatch({type: "DOCKER"})}>
+                                Play Quiz
+                            </button>
+                            </Link>
+                        </div>
+                    </div>
+                    
+                    <div className="quiz-links docker-quiz">
+                        <Link to="/devops" >
+                            <button className="quiz-img-link" onClick={() => dispatch({type: "DEVOPS"})}>   
                             <img src="../../images/devops-cover.png" alt="devops cover" />
-                        </button>
-                    </Link>
+                            </button>
+                            </Link>
+                        <div className="quiz-captions linux-caption">
+                            <p>Check how much you know about DevOps</p>
+                            <Link to="/devops">
+                            <button className="quiz-covers docker-cover" onClick={() => dispatch({type: "DEVOPS"})}>
+                                Play Quiz
+                            </button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

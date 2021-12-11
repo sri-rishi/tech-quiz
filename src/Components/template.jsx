@@ -22,10 +22,10 @@ export function Template() {
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
 
-    useEffect(() => {
-        const timeOut = setInterval(() => handleSubmit(), 60000);
-        return () => clearInterval(timeOut);
-    })
+    // useEffect(() => {
+    //     const timeOut = setInterval(() => handleSubmit(), 60000);
+    //     return () => clearInterval(timeOut);
+    // })
 
     
     function handleAnswerCilck(val) {
@@ -74,7 +74,7 @@ export function Template() {
                         }
                         </div>
                     </div>
-                    <Timer />
+                    {/* <Timer /> */}
                     <button onClick={() => handleSubmit()}>Submit</button>
                     <button onClick={() => {
                         setIndex(0);

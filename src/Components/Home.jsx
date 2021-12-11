@@ -55,7 +55,7 @@ export function Home() {
                     <div className="quiz-links docker-quiz">
                         <Link to="/devops" >
                             <button className="quiz-img-link" onClick={() => dispatch({type: "DEVOPS"})}>   
-                            <img src="../../images/devops-cover.png" alt="devops cover" />
+                            <img src="../../images/devops-cover.jpg" alt="devops cover" />
                             </button>
                             </Link>
                         <div className="quiz-captions linux-caption">

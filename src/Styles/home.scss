@@ -69,15 +69,22 @@
         margin: 2rem 1rem;
         display: grid;
         grid-template-rows: auto auto auto;
+        align-content: center;
+        justify-content: center;
         gap: 4rem;
 
         @media(min-width: map-Value($break-points, "desktop-breakpoint") ) {
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto auto;
         }
         
+        @media (min-width: map-Value($break-points, "wide-breakpoint"))  {
+            grid-template-columns: auto auto auto;
+        }
+
         & .quiz-links {
             width: 75%;
             max-width: 500px;
+            min-width: 300px;
             min-height: 338px;
             margin: auto;
             border: 1px solid gray;

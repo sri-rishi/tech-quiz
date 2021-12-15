@@ -1,6 +1,3 @@
 @import "./variables";
 @import "./functions&mixin";
-
-.loader-div {
-    color: map-Value($font-color, "shady-yellow");
-}
+@import "./loder"

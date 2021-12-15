@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
+import { Loader } from "./Loder";
 import { Timer } from "./Timer";
-import { Hypnosis} from "react-cssfx-loading/lib";
 
 
 export function Template() {
@@ -85,7 +85,7 @@ export function Template() {
                     </button>
                 </div>
                 : 
-                "data is still loading"
+                <Loader />
             } 
         </div>
     )

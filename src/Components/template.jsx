@@ -85,11 +85,8 @@ export function Template() {
                     </button>
                 </div>
                 : 
-                <div className="loader-div">
-                    <h1>Loading</h1> 
-                    <Hypnosis color="#FFC947"/>
-                </div>
-            }
+                "data is still loading"
+            } 
         </div>
     )
 }

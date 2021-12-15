@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 import { Timer } from "./Timer";
+import { Hypnosis} from "react-cssfx-loading/lib";
 
 
 export function Template() {
@@ -22,10 +23,10 @@ export function Template() {
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
 
-    useEffect(() => {
-        const timeOut = setInterval(() => handleSubmit(), 60000);
-        return () => clearInterval(timeOut);
-    })
+    // useEffect(() => {
+    //     const timeOut = setInterval(() => handleSubmit(), 60000);
+    //     return () => clearInterval(timeOut);
+    // })
 
     
     function handleAnswerCilck(val) {
@@ -74,7 +75,7 @@ export function Template() {
                         }
                         </div>
                     </div>
-                    <Timer />
+                    {/* <Timer /> */}
                     <button onClick={() => handleSubmit()}>Submit</button>
                     <button onClick={() => {
                         setIndex(0);
@@ -83,7 +84,11 @@ export function Template() {
                             Reset Quiz
                     </button>
                 </div>
-                : "Data is still loading"
+                : 
+                <div className="loader-div">
+                    <h1>Loading</h1> 
+                    <Hypnosis color="#FFC947"/>
+                </div>
             }
         </div>
     )

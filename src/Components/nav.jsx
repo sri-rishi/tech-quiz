@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 
 export function NavBar() {
-    const {dispatch} = useData()
+    const {dispatch,index, setIndex} = useData()
     return (
         <div className="navbar">
             <div className="link-div">
@@ -14,7 +14,10 @@ export function NavBar() {
             
                 <NavLink to="/" style={{textDecoration: "none"}}>
                     <div className="home-div">
-                        <button className="btn-home" onClick={() => dispatch({type: "RESET_QUIZ"})}>Home</button>
+                        <button className="btn-home" onClick={() => {
+                            setIndex(0)
+                            dispatch({type: "RESET_QUIZ"})
+                            }}>Home</button>
                     </div>
                 </NavLink>
                 </div>

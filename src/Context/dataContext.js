@@ -62,7 +62,7 @@ function dataReducer(state, action) {
             return {
                 ...state,
                 selectedValues: [],
-                correctValues: []
+                correctValues: [],
             }
         
         case "CORRECT_ANSWERS":

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
-import { Loader } from "./Loder";
 import { Timer } from "./Timer";
 import { BouncingBalls } from "react-cssfx-loading/lib";
 
@@ -17,17 +16,17 @@ export function Template() {
     function handleSubmit() {
         setIsClickable(true);
         if(index >= data.length - 1) {
-            navigate("/result")
+            navigate("/result");
         }else {
             setIndex(val => val + 1);
         }
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
 
-    // useEffect(() => {
-    //     const timeOut = setInterval(() => handleSubmit(), 60000);
-    //     return () => clearInterval(timeOut);
-    // })
+    useEffect(() => {
+        const timeOut = setInterval(() => handleSubmit(), 60000);
+        return () => clearInterval(timeOut);
+    })
 
     
     function handleAnswerCilck(val) {
@@ -76,7 +75,7 @@ export function Template() {
                         }
                         </div>
                     </div>
-                    {/* <Timer /> */}
+                    <Timer />
                     <button onClick={() => handleSubmit()}>Submit</button>
                     <button onClick={() => {
                         setIndex(0);

@@ -2,6 +2,11 @@
     @return map-get($key, $value)
 };
 
+@mixin margin-block-zero {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 @mixin dispaly-flex{
     display:flex;
     justify-content:center;

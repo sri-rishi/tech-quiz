@@ -1,2 +1,17 @@
 @import "./variables";
 @import "./functions&mixin";
+
+
+.loader-div {
+    margin: auto;
+    @include dispaly-flex; 
+    color: map-Value($font-color, "shady-yellow");
+    flex-direction: column;
+    margin-top: 15rem;
+    
+    & h1 {
+        margin: 0 auto;
+        @include margin-block-zero;
+        font-size: 2.5rem;
+    }
+}

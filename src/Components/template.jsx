@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 import { Loader } from "./Loder";
 import { Timer } from "./Timer";
+import { BouncingBalls } from "react-cssfx-loading/lib";
 
 
 export function Template() {
@@ -85,7 +86,12 @@ export function Template() {
                     </button>
                 </div>
                 : 
-                <Loader />
+                <div className="loader-div">
+                    <h1 className="loading-text">Loading</h1>
+                    <div className="loader">
+                        <BouncingBalls  color="#FFC947" width="15px" height="15px"/>
+                    </div>
+                </div>
             } 
         </div>
     )

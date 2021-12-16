@@ -2,7 +2,7 @@
 
 
 @mixin loader-divs-initial {
-    border: 8px solid transparent;
+    border: 3.5px solid transparent;
     border-top-color: map-Value($font-color, "shady-yellow");
     border-right-color: map-Value($font-color, "shady-yellow");
     border-radius: 50%;
@@ -17,28 +17,28 @@
 
     & .outer {
         @include loader-divs-initial;
-        width: 3.5em;
-        height: 3.5em;
-        margin-left: -1.75em;
-        margin-top: -1.75em;
+        width: 4.5em;
+        height: 4.5em;
+        margin-left: -2.75em;
+        margin-top: -2.75em;
         animation: spin 2s linear infinite;
     }  
 
     & .middle {
         @include loader-divs-initial;
-        width: 2.1em;
-        height: 2.1em;
-        margin-left: -1.05em;
-        margin-top: -1.05em;
+        width: 3.1em;
+        height: 3.1em;
+        margin-left: -2.05em;
+        margin-top: -2.05em;
         animation: spin 1.75s linear reverse infinite;
     }
 
     & .inner {
         @include loader-divs-initial;
-        width: 0.8em;
-        height: 0.8em;
-        margin-left: -0.4em;
-        margin-top: -0.4em;
+        width: 1.8em;
+        height: 1.8em;
+        margin-left: -1.4em;
+        margin-top: -1.4em;
         animation: spin 1.5s linear infinite;
     }
 

@@ -5,12 +5,12 @@ export function Timer() {
     const [timer, setTimer] = useState(60);
     const {index} = useData();
 
-    useEffect(()=> {
-        const time = setInterval(() => {
-                setTimer(time => time < 1 ? 60 : time - 1);
-        }, 1000) 
-        return () => clearInterval(time)
-    }, [index])
+    // useEffect(()=> {
+    //     const time = setInterval(() => {
+    //             setTimer(time => time < 1 ? 60 : time - 1);
+    //     }, 1000) 
+    //     return () => clearInterval(time)
+    // }, [index])
 
     return (
         <div>

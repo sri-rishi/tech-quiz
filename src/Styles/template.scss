@@ -15,3 +15,22 @@
         font-size: 2.5rem;
     }
 }
+
+.main {
+    margin-top: -1rem;
+    padding: 1rem;
+
+    & .content-div {
+        @include display-grid;
+        background-color: map-Value($font-color, "light-gray");
+        
+        & .timer-div {
+            text-align: right;
+        }
+        
+        & .answers-div {
+            @include dispaly-flex;
+            flex-direction: column;
+        }
+    }
+}

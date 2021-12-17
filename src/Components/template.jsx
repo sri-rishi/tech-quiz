@@ -23,10 +23,10 @@ export function Template() {
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
 
-    useEffect(() => {
-        const timeOut = setInterval(() => handleSubmit(), 60000);
-        return () => clearInterval(timeOut);
-    })
+    // useEffect(() => {
+    //     const timeOut = setInterval(() => handleSubmit(), 60000);
+    //     return () => clearInterval(timeOut);
+    // })
 
     
     function handleAnswerCilck(val) {
@@ -55,34 +55,41 @@ export function Template() {
         <div>
             {
                 data.length ?
-                <div>
-                    <div>
-                        <h1>{data[index].question}</h1>
-                        <div>
-                            {
-                            Object.values(data[index].answers).map((item) => (
-                                item === null ? "" : 
-                                <button
-                                key={item}
-                                    onClick={() => handleAnswerCilck(item)}
-                                    style={{backgroundColor : item === selectedValues[index] ? bgColor : "gray"}}
-                                disabled={!isClickable}
-                                >
-                                    {item}
-                                </button>
-                            )
-                            )
-                        }
+                <div className="main">
+                    <div className="content-div">
+                        <div className="timer-div">
+                            <Timer />
+                        </div>
+                        <div className="question-div">
+                            <h1 className="question">{data[index].question}</h1>
+                            <div className="answers-div">
+                                {
+                                Object.values(data[index].answers).map((item) => (
+                                    item === null ? "" : 
+                                    <button
+                                    className="answer"
+                                    key={item}
+                                        onClick={() => handleAnswerCilck(item)}
+                                        style={{backgroundColor : item === selectedValues[index] ? bgColor : "gray"}}
+                                    disabled={!isClickable}
+                                    >
+                                        {item}
+                                    </button>
+                                )
+                                )
+                            }
+                            </div>
+                        </div>                    
+                        <div className="action-btn-div">
+                            <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
+                            <button className="reset-btn" onClick={() => {
+                                setIndex(0);
+                                dispatch({type: "RESET_QUIZ"})
+                            }}>
+                                Reset Quiz
+                            </button>
                         </div>
                     </div>
-                    <Timer />
-                    <button onClick={() => handleSubmit()}>Submit</button>
-                    <button onClick={() => {
-                        setIndex(0);
-                        dispatch({type: "RESET_QUIZ"})
-                        }}>
-                            Reset Quiz
-                    </button>
                 </div>
                 : 
                 <div className="loader-div">

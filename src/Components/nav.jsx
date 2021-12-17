@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 
 export function NavBar() {
-    const {dispatch,index, setIndex} = useData()
+    const {dispatch, setIndex} = useData()
     return (
         <div className="navbar">
             <div className="link-div">

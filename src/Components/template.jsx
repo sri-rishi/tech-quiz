@@ -11,7 +11,6 @@ export function Template() {
     const [bgColor, setBgColor] = useState("gray");
     const navigate = useNavigate();
     let correct_Answers;
-    
 
     function handleSubmit() {
         setIsClickable(true);
@@ -71,7 +70,7 @@ export function Template() {
                                     key={item}
                                         onClick={() => handleAnswerCilck(item)}
                                         style={{
-                                            backgroundColor : item === selectedValues[index] ? bgColor : "#C8C6A7",
+                                            backgroundColor : item === selectedValues[index] ? bgColor : "white",
                                         }}
                                     disabled={!isClickable}
                                     >

@@ -1,12 +1,16 @@
-$font-family: "Baloo Bhaijaan 2";
+$font-family-main: "Baloo Bhaijaan 2";
+$font-family-secondry: 'Poppins', sans-serif;
+
 $font-weights: (
+    "thin": "200",
+    "light": "300",
     "regular": 400,
     "medium": 500,
     "semi-bold": 600,
     "bold": 700
 );
 
-$font-color: (   
+$colors: (   
     "white": white, 
     "dark-gray": #423F3E,
     "shine-light-blue": #04009A,

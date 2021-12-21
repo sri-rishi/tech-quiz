@@ -30,11 +30,11 @@
                 @include noBorder-button;
                 font-weight: map-Value($font-weights, "medium");
                 font-size: 1.3rem;
-                color: map-Value($font-color,"dark-gray");
+                color: map-Value($colors,"dark-gray");
 
                 &:hover {
-                    background-color: map-Value($font-color, "shine-light-blue");
-                    color: map-Value($font-color, "white");;
+                    background-color: map-Value($colors, "shine-light-blue");
+                    color: map-Value($colors, "white");;
                     border-radius: 20%;
                     padding: 6px 10px;
                 }

@@ -32,7 +32,7 @@
     }
 
     & .cover-text {
-        color: map-Value($font-color , "light-skyBlue" );
+        color: map-Value($colors , "light-skyBlue" );
         text-align: center;
         line-height: 2.2rem;
         @media(min-width: map-Value($break-points, "tab-breakpoint")) {
@@ -60,7 +60,7 @@
     margin: 1rem auto;
 
     & .dashboard {
-        color: map-Value($font-color, "medium-gray");
+        color: map-Value($colors, "medium-gray");
         text-decoration: underline;
         font-size: 2.5rem;
     }
@@ -90,10 +90,10 @@
             border: 1px solid gray;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 8px 8px 4px map-Value($font-color, 'shady-yellow');
+            box-shadow: 0 8px 8px 4px map-Value($colors, 'shady-yellow');
 
             &:hover {
-                box-shadow: 0 16px 16px 8px map-Value($font-color, 'shady-yellow');
+                box-shadow: 0 16px 16px 8px map-Value($colors, 'shady-yellow');
             }
 
             & .quiz-img-link {
@@ -108,17 +108,24 @@
                 padding: 0 10px;
                 font-size: 1.3rem;
                 font-weight: map-Value($font-weights, "semi-bold");
-                color: map-Value($font-color, "light-gray");
+                color: map-Value($colors, "light-gray");
 
                 & .btn-play {
                     @include noBorder-button;
                     font-size: 1.1rem;
                     font-weight: map-Value($font-weights, "medium");
-                    background-color:map-Value($font-color, "shady-yellow");
-                    color: map-Value($font-color, "white");
+                    background-color:map-Value($colors, "shady-yellow");
+                    color: map-Value($colors, "white");
                     border-radius: 10px;
                     padding: 7px 15px;
                     box-shadow: 4px 4px 4px gray;
+
+                    &:hover {
+                        border: 3px solid map-Value($colors, "shady-yellow");
+                        background-color: transparent;
+                        color:  map-Value($colors, "shady-yellow");
+                        box-shadow: 0 0 8px 4px  map-Value($colors, "shady-yellow");
+                    }
                 }
             }
         }

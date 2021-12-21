@@ -5,13 +5,63 @@
 .loader-div {
     margin: auto;
     @include dispaly-flex; 
-    color: map-Value($font-color, "shady-yellow");
+    color: map-Value($colors, "shady-yellow");
     flex-direction: column;
     margin-top: 15rem;
     
-    & h1 {
+    & h2 {
         margin: 0 auto;
         @include margin-block-zero;
         font-size: 2.5rem;
+    }
+}
+
+.main {
+    padding: 1rem;
+    font-family: $font-family-secondry;
+    // background-color: map-Value($font-color, "light-gray");
+    height: 100vh;
+
+    & .content-div {
+        @include display-grid;
+        background-color: map-Value($colors, "white");
+        text-align: center;
+        padding: 1rem 0.5rem;
+        color: map-Value($colors, "dark-gray");
+        border-radius: 20px;
+        box-shadow: 0 0 10px 5px map-Value($colors, "light-gray");
+
+        & button {
+            @include noBorder-button;
+            font-family: $font-family-secondry;
+        }
+
+        & .timer-div {
+            text-align: right;
+        }
+        
+        & .answers-div {
+            @include dispaly-flex;
+            flex-direction: column;
+
+
+            & .answer {
+                box-shadow: 0 0 8px 2px gray;
+                margin: 1rem;
+                padding: 0.8rem 1.5rem;
+                width: 90%;
+                font-size: 17px;
+                font-weight: map-Value($font-weights, "medium");
+                color: map-Value($colors, "white");
+                border-radius: 4px;
+
+                // &:hover {
+                //     color: map-Value($colors, "shady-yellow");
+                //     border: 1px solid map-Value($colors, "shady-yellow");
+                //     // box-shadow: 
+                // }
+            }
+        }
+
     }
 }

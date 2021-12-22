@@ -13,7 +13,7 @@ export function Timer() {
     // }, [index])
 
     return (
-        <div>
+        <div className="timer-div">
             {timer === 60 ? <span>01:00</span> : <span>00:{timer < 10 ? "0" + timer: timer}</span>}
         </div>
     )

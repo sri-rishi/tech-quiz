@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
-
 export const DataContext = createContext();
 
 export function DataProvider({children}) {

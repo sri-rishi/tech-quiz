@@ -8,7 +8,7 @@ import { BouncingBalls } from "react-cssfx-loading/lib";
 export function Template() {
     const {data, dispatch, index, setIndex, selectedValues} = useData();
     const [isClickable, setIsClickable] = useState(true);
-    const [bgColor, setBgColor] = useState("gray");
+    const [color, setColor] = useState("#480cec");
     const navigate = useNavigate();
     let correct_Answers;
 
@@ -32,12 +32,12 @@ export function Template() {
         setIsClickable(false)
         dispatch({type: "SELECTED", payload: val}) 
         if(val === correct_Answers) {
-            setBgColor("green");
+            setColor("green");
         }else {
-            setBgColor("red");
+            setColor("#F90716");
         }
 
-        console.log(bgColor);
+        console.log(color);
     }
     
     function correctAnswers(arr1, arr2) {
@@ -70,7 +70,8 @@ export function Template() {
                                     key={item}
                                         onClick={() => handleAnswerCilck(item)}
                                         style={{
-                                            backgroundColor : item === selectedValues[index] ? bgColor : "white",
+                                            backgroundColor : item === selectedValues[index] ? color : "#480cec",
+                                            boxShadow: `0 0 10px 4px ${item === selectedValues[index] ? color : ""}`
                                         }}
                                     disabled={!isClickable}
                                     >

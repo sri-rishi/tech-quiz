@@ -19,8 +19,6 @@
 .main {
     padding: 1rem;
     font-family: $font-family-secondry;
-    // background-color: map-Value($font-color, "light-gray");
-    height: 100vh;
 
     & .content-div {
         @include display-grid;
@@ -34,6 +32,10 @@
         & button {
             @include noBorder-button;
             font-family: $font-family-secondry;
+            font-size: 17px;
+            font-weight: map-Value($font-weights, "medium");
+            color: map-Value($colors, "white");
+            border-radius: 4px;
         }
 
         & .timer-div {
@@ -47,12 +49,38 @@
 
             & .answer {
                 margin: 1rem;
-                padding: 0.8rem 1.5rem;
                 width: 90%;
-                font-size: 17px;
-                font-weight: map-Value($font-weights, "medium");
-                color: map-Value($colors, "white");
-                border-radius: 4px;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        & .action-btn-div {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 1rem;
+
+            & button {
+                padding: 0.5rem 1.2rem;
+            }
+
+            & .btn-reset {
+                background-color: map-Value($colors, "light-skyBlue");
+
+                &:hover {
+                    background-color: transparent;
+                    color: map-Value($colors, "neon-red");
+                    box-shadow: 0 0 10px 4px map-Value($colors, "neon-red");
+                }
+            }
+
+            & .btn-submit {
+                background-color: map-Value($colors, "shady-yellow");
+
+                &:hover {
+                    background-color: transparent;
+                    color: map-Value($colors, "neon-green");
+                    box-shadow: 0 0 10px 4px map-Value($colors, "neon-green");
+                }
             }
         }
 

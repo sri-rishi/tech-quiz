@@ -32,7 +32,7 @@ export function Template() {
         setIsClickable(false)
         dispatch({type: "SELECTED", payload: val}) 
         if(val === correct_Answers) {
-            setColor("green");
+            setColor("#06FF00");
         }else {
             setColor("#F90716");
         }
@@ -83,13 +83,14 @@ export function Template() {
                             </div>
                         </div>                    
                         <div className="action-btn-div">
-                            <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
-                            <button className="reset-btn" onClick={() => {
+
+                            <button className="btn-reset" onClick={() => {
                                 setIndex(0);
                                 dispatch({type: "RESET_QUIZ"})
                             }}>
-                                Reset Quiz
+                                Reset 
                             </button>
+                            <button className="btn-submit" onClick={() => handleSubmit()}>Submit</button>
                         </div>
                     </div>
                 </div>

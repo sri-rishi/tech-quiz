@@ -17,22 +17,24 @@
 }
 
 .main {
+    @include dispaly-flex;
     padding: 1rem;
     font-family: $font-family-secondry;
 
+    @media (min-width: map-Value($break-points, "tab-breakpoint")) {
+        margin: 2rem auto;
+    }
+
     & .content-div {
         @include display-grid;
+        text-align: center;
+        max-width: 450px;
         position: relative;
         background-color: map-Value($colors, "white");
-        text-align: center;
-        padding: 1rem 0.5rem;
+        padding: 2rem 2rem;
         color: map-Value($colors, "dark-gray");
         border-radius: 20px;
         box-shadow: 0 0 10px 5px map-Value($colors, "light-gray");
-
-        & .question-div {
-            margin-top: 2rem;
-        }
 
         & button {
             @include noBorder-button;
@@ -42,28 +44,31 @@
             color: map-Value($colors, "white");
             border-radius: 4px;
         }
-        
-        & .answers-div {
-            @include dispaly-flex;
-            flex-direction: column;
 
+        & .question-div {
+            margin: 2.5rem auto;
 
-            & .answer {
-                margin: 1rem;
-                width: 90%;
-                padding: 0.8rem 1.5rem;
+            & .answers-div {
+                margin-top: 3rem;
+                @include dispaly-flex;
+                flex-direction: column;
+                gap: 1.5rem;
 
-                &:hover {
-                    color: map-Value($colors, "light-skyBlue");
+                & .answer {
+                    width: 100%;
+                    padding: 0.8rem 1.5rem;
+
+                    &:hover {
+                        color: map-Value($colors, "light-skyBlue");
+                    }
                 }
             }
+
         }
 
         & .action-btn-div {
             display: flex;
             justify-content: space-between;
-            padding: 1rem 1rem;
-            
 
             & button {
                 padding: 0.5rem 1.2rem;

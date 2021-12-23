@@ -22,12 +22,17 @@
 
     & .content-div {
         @include display-grid;
+        position: relative;
         background-color: map-Value($colors, "white");
         text-align: center;
         padding: 1rem 0.5rem;
         color: map-Value($colors, "dark-gray");
         border-radius: 20px;
         box-shadow: 0 0 10px 5px map-Value($colors, "light-gray");
+
+        & .question-div {
+            margin-top: 2rem;
+        }
 
         & button {
             @include noBorder-button;
@@ -47,13 +52,17 @@
                 margin: 1rem;
                 width: 90%;
                 padding: 0.8rem 1.5rem;
+
+                &:hover {
+                    color: map-Value($colors, "light-skyBlue");
+                }
             }
         }
 
         & .action-btn-div {
             display: flex;
             justify-content: space-between;
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
             
 
             & button {

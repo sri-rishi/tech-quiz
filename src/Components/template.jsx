@@ -56,7 +56,7 @@ export function Template() {
                 data.length ?
                 <div className="main">
                     <div className="content-div">
-                            <Timer />
+                        <Timer />
                         <div className="question-div">
                             <h2 className="question">{data[index].question}</h2>
                             <div className="answers-div">

@@ -1,3 +1,13 @@
+@import "./variables";
+@import "./functions&mixin";
+
 .timer-div {
-    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 65px;
+    color: map-Value($colors, "white");
+    border-radius: 4px;
+    padding: 7px;
+    font-weight: map-Value($font-weights, "medium");
 }

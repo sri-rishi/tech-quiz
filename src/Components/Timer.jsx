@@ -1,16 +1,21 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useData } from "../Context/dataContext";
 
 export function Timer() {
-    const [timer, setTimer] = useState(60);
-    const {index} = useData();
+    const {index, timer, setTimer, setIndex} = useData();
+    useEffect(()=> {
+        const time = setInterval(() => {
+                setTimer(time => time < 1 ? 60 : time - 1); 
+        }, 1000) ;
+        return () => clearInterval(time)
+    }, [index]);
 
-    // useEffect(()=> {
-    //     const time = setInterval(() => {
-    //             setTimer(time => time < 1 ? 60 : time - 1);
-    //     }, 1000) 
-    //     return () => clearInterval(time)
-    // }, [index]);
+    // useEffect(() => {
+    //         if(timer === 0 && data.length) {
+    //             setIndex(val => val + 1)
+    //         }
+    // }, [timer])
+
 
     return (
         <div

@@ -6,7 +6,7 @@ import { BouncingBalls } from "react-cssfx-loading/lib";
 
 
 export function Template() {
-    const {data, dispatch, index, setIndex, selectedValues} = useData();
+    const {data, dispatch, index, setIndex, selectedValues, timer, setTimer} = useData();
     const [isClickable, setIsClickable] = useState(true);
     const [color, setColor] = useState("#480cec");
     const navigate = useNavigate();
@@ -14,20 +14,22 @@ export function Template() {
 
     function handleSubmit() {
         setIsClickable(true);
-        if(index >= data.length - 1) {
-            navigate("/result");
-        }else {
+        setTimer(60);
+        if((index < data.length - 1)) {
             setIndex(val => val + 1);
+        } else {
+            navigate("/result");
         }
         dispatch({type: "CORRECT_ANSWERS", payload: correct_Answers});
     }
+    
 
     // useEffect(() => {
-    //     const timeOut = setInterval(() => handleSubmit(), 60000);
-    //     return () => clearInterval(timeOut);
-    // })
+    //     console.log("this is interval console.log"); 
+    //     const timeOut = setInterval(handleSubmit, 6000);
+    //     return () => clearInterval(timeOut)
+    // });
 
-    
     function handleAnswerCilck(val) {
         setIsClickable(false)
         dispatch({type: "SELECTED", payload: val}) 
@@ -36,8 +38,6 @@ export function Template() {
         }else {
             setColor("#F90716");
         }
-
-        console.log(color);
     }
     
     function correctAnswers(arr1, arr2) {
@@ -50,13 +50,15 @@ export function Template() {
     //    console.log("this is correctanswer",  correct_Answers)
     }
 
+    
+
     return (
         <div>
             {
                 data.length ?
                 <div className="main">
                     <div className="content-div">
-                        <Timer />
+                        {/* <Timer /> */}
                         <div className="question-div">
                             <h2 className="question">{data[index].question}</h2>
                             <div className="answers-div">

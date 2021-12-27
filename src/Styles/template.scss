@@ -20,10 +20,11 @@
     @include dispaly-flex;
     padding: 1rem;
     font-family: $font-family-secondry;
+    margin-top: -1rem;
 
-    @media (min-width: map-Value($break-points, "tab-breakpoint")) {
-        margin: 2rem auto;
-    }
+    // @media (min-width: map-Value($break-points, "tab-breakpoint")) {
+    //     margin: 2rem auto;
+    // }
 
     & .content-div {
         @include display-grid;
@@ -31,10 +32,12 @@
         max-width: 450px;
         position: relative;
         background-color: map-Value($colors, "white");
+        // background-color: #F6F6F6;
         padding: 2rem 2rem;
         color: map-Value($colors, "dark-gray");
         border-radius: 20px;
-        box-shadow: 0 0 10px 5px map-Value($colors, "light-gray");
+        outline: none;
+        box-shadow: 0 0 6px 5px map-Value($colors, "light-gray");
 
         & button {
             @include noBorder-button;

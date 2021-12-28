@@ -21,7 +21,8 @@
     padding: 1rem;
     font-family: $font-family-secondry;
     margin-top: -1rem;
-
+    background-image: url(../assets/back-image.jpg);
+    background-size: cover;
     // @media (min-width: map-Value($break-points, "tab-breakpoint")) {
     //     margin: 2rem auto;
     // }

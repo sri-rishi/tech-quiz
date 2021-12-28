@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const DataContext = createContext();
 
 export function DataProvider({children}) {
@@ -19,7 +20,6 @@ export function DataProvider({children}) {
             }
         })()
     }, [categoryParam]);
-    
 
     return (
         <DataContext.Provider value={{data, dispatch, correctValues, selectedValues, categoryParam, index, setIndex, timer, setTimer}}>
@@ -34,7 +34,7 @@ function dataReducer(state, action) {
         case "DOCKER":
             return {
                 ...state,
-                categoryParam: "Docker"
+                categoryParam: "Docker",
             }
 
         case "DEVOPS":

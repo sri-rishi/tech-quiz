@@ -18,14 +18,8 @@
 
 .main {
     @include dispaly-flex;
-    padding: 1rem;
+    padding: 4rem;
     font-family: $font-family-secondry;
-    margin-top: -1rem;
-    background-image: url(../assets/back-image.jpg);
-    background-size: cover;
-    // @media (min-width: map-Value($break-points, "tab-breakpoint")) {
-    //     margin: 2rem auto;
-    // }
 
     & .content-div {
         @include display-grid;
@@ -33,7 +27,6 @@
         max-width: 450px;
         position: relative;
         background-color: map-Value($colors, "white");
-        // background-color: #F6F6F6;
         padding: 2rem 2rem;
         color: map-Value($colors, "dark-gray");
         border-radius: 20px;

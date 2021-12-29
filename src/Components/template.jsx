@@ -57,9 +57,6 @@ export function Template() {
             {
                 data.length ?
                 <div className="main">
-                    {/* <div>
-                        <img src="../../images\men-thinking.png" />
-                    </div> */}
                     <div className="content-div">
                         {/* <Timer /> */}
                         <div className="question-div">
@@ -84,6 +81,7 @@ export function Template() {
                                 )
                             }
                             </div>
+                            
                         </div>                    
                         <div className="action-btn-div">
 
@@ -96,9 +94,9 @@ export function Template() {
                             <button className="btn-submit" onClick={() => handleSubmit()}>Submit</button>
                         </div>
                     </div>
-                    {/* <div>
-                        <img src="../../images\women-thinking.png" />
-                    </div> */}
+                    <div>
+                        <img src="../../images\thinking-people.jpg" />
+                    </div>
                 </div>
                 : 
                 <div className="loader-div">

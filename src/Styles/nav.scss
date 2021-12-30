@@ -2,8 +2,7 @@
 @import './functions&mixin';
 
 .navbar {
-    margin: 0.5rem 0;
-    box-shadow: 3px 3px 4px rgb(161, 148, 148);
+    box-shadow: 3px 3px 8px 4px rgb(161, 148, 148);
     
     .link-div {
         @include dispaly-flex;

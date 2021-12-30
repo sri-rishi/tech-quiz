@@ -94,8 +94,8 @@ export function Template() {
                             <button className="btn-submit" onClick={() => handleSubmit()}>Submit</button>
                         </div>
                     </div>
-                    <div>
-                        <img src="../../images\thinking-people.jpg" />
+                    <div className="img-div">
+                        <img src="../../images\question-banner.png" />
                     </div>
                 </div>
                 : 

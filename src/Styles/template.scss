@@ -20,13 +20,22 @@
     @include dispaly-flex;
     padding: 4rem;
     font-family: $font-family-secondry;
+    gap: 4rem;
+    margin-top: 0.4rem;
+    flex-direction: column-reverse;
+
+    @media(min-width: map-Value($break-points, "wide-breakpoint")) {
+        flex-direction: row;
+        gap: 8rem;
+    }
 
     & .content-div {
         @include display-grid;
         text-align: center;
         max-width: 450px;
         position: relative;
-        background-color: map-Value($colors, "white");
+        // background-color: map-Value($colors, "white");
+        background-color: #FFF9F9;
         padding: 2rem 2rem;
         color: map-Value($colors, "dark-gray");
         border-radius: 20px;
@@ -63,6 +72,8 @@
 
         }
 
+
+
         & .action-btn-div {
             display: flex;
             justify-content: space-between;
@@ -93,4 +104,6 @@
         }
 
     }
+
+
 }

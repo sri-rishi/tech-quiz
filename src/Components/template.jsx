@@ -6,15 +6,16 @@ import { BouncingBalls } from "react-cssfx-loading/lib";
 
 
 export function Template() {
-    const {data, dispatch, index, setIndex, selectedValues, timer, setTimer} = useData();
+    const {data, dispatch, index, setIndex, selectedValues} = useData();
     const [isClickable, setIsClickable] = useState(true);
     const [color, setColor] = useState("#480cec");
+    const [timer, setTimer] = useState(60);
     const navigate = useNavigate();
     let correct_Answers;
 
     function handleSubmit() {
         setIsClickable(true);
-        setTimer(60);
+        // setTimer(60);
         if((index < data.length - 1)) {
             setIndex(val => val + 1);
         } else {
@@ -24,14 +25,14 @@ export function Template() {
     }
     
 
-    // useEffect(() => {
-    //     console.log("this is interval console.log"); 
-    //     const timeOut = setInterval(handleSubmit, 6000);
-    //     return () => clearInterval(timeOut)
-    // });
+    useEffect(() => {
+        console.log("this is interval console.log"); 
+        const timeOut = setInterval(handleSubmit, 60000);
+        return () => clearInterval(timeOut)
+    });
 
     function handleAnswerCilck(val) {
-        setIsClickable(false)
+        setIsClickable(false);
         dispatch({type: "SELECTED", payload: val}) 
         if(val === correct_Answers) {
             setColor("#06FF00");
@@ -47,7 +48,6 @@ export function Template() {
         
     if(data.length) {
        correct_Answers =  correctAnswers(Object.values(data[index].correct_answers), Object.values(data[index].answers));
-    //    console.log("this is correctanswer",  correct_Answers)
     }
 
     
@@ -58,7 +58,7 @@ export function Template() {
                 data.length ?
                 <div className="main">
                     <div className="content-div">
-                        {/* <Timer /> */}
+                        <Timer setTimer={setTimer} timer={timer}/>
                         <div className="question-div">
                             <h2 className="question">{data[index].question}</h2>
                             <div className="answers-div">

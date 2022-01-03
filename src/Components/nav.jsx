@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useData } from "../Context/dataContext";
 
 export function NavBar() {
-    const {dispatch, setIndex, setTimer} = useData()
+    const {dispatch, setIndex} = useData()
     return (
         <div className="navbar">
             <div className="link-div">
@@ -16,7 +16,7 @@ export function NavBar() {
                     <div className="home-div">
                         <button className="btn-home" onClick={() => {
                             setIndex(0)
-                            setTimer(60)
+                            // setTimer(60)
                             dispatch({type: "RESET_QUIZ"})
                             }}>Home</button>
                     </div>

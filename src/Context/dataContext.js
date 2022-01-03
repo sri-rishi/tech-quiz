@@ -6,7 +6,6 @@ export const DataContext = createContext();
 export function DataProvider({children}) {
     const [data, setData] = useState([]);
     const [index , setIndex] = useState(0);
-    const [timer, setTimer] = useState(60);
     const [{categoryParam, selectedValues, correctValues}, dispatch] = useReducer(dataReducer, {categoryParam: "", selectedValues: [], correctValues: []}) 
     const url = "https://quizapi.io/api/v1/questions";
     const apikey = "6pNezKFK9uocK9GDcTB5WwIcFoewRF54OBOOOoZX";
@@ -21,8 +20,10 @@ export function DataProvider({children}) {
         })()
     }, [categoryParam]);
 
+    console.log(correctValues);
+    
     return (
-        <DataContext.Provider value={{data, dispatch, correctValues, selectedValues, categoryParam, index, setIndex, timer, setTimer}}>
+        <DataContext.Provider value={{data, dispatch, correctValues, selectedValues, categoryParam, index, setIndex}}>
             {children}
         </DataContext.Provider>
     )

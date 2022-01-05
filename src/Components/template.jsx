@@ -15,7 +15,7 @@ export function Template() {
 
     function handleSubmit() {
         setIsClickable(true);
-        // setTimer(60);
+        setTimer(60);
         if((index < data.length - 1)) {
             setIndex(val => val + 1);
         } else {

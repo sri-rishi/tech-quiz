@@ -22,8 +22,7 @@
     font-family: $font-family-secondry;
     gap: 4rem;
     margin-top: 0.4rem;
-    // flex-direction: column-reverse;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     @media(min-width: map-Value($break-points, "wide-breakpoint")) {
         flex-direction: row;

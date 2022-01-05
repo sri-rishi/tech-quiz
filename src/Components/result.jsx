@@ -10,11 +10,7 @@ export function Result() {
         return arr1.forEach(el => el === arr2[arr1.indexOf(el)] ? setCount(count => count + 1) : "")
     }
 
-    // function backColor(arr1, arr2, arr3) {
-    // //    return arr1.forEach( el => arr3.includes(el) ? "red" : "")
-    //     console.log(arr3)
-    // }
-    // console.log(correctValues[index])
+    let success_percentage = Math.floor((count * 100) / 5);
 
    useEffect(() => {
         correctAnsCount(selectedValues, correctValues)
@@ -24,30 +20,26 @@ export function Result() {
         <div>
             <NavBar />
             <div>
+                {
+                    success_percentage === 100 ?
+                    <div>
+                        <img src="../../images\winner-trophy.gif" alt="winner-gif" />
+                    </div>
+                    :
+                    <div>
+                        <img src="../../images\star.gif" alt="star-gif" />
+                    </div>
+                }
+                
+
                 <h2>Your Result</h2>
                 <div>
                     <div><span>Total Questions</span> <span>5</span></div>
                     <div><span>correct Answers</span> <span>{count}</span></div>
-                    <div><span>Success Percentage</span> <span>{(count * 100) / 5}</span></div>
+                    <div><span>Success Percentage</span> <span>{success_percentage}</span></div>
                 </div>
-                {/* <div style={{margin: "1rem"}}>
-                    <div>
-                        {
-                            data.map((item, index) => {
-                                return (
-                                    <div>
-                                        <h3>{item.question}</h3>
-                                        { Object.values(item.answers).map((subItem, index) => 
-                                        <p style={{backgroundColor: `${backColor(correctValues, selectedValues, Object.values(item.answers))}`}}>
-                                            {subItem}
-                                        </p>
-                                        )}
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div> */}
+
+                
             </div>
         </div>
     )

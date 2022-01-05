@@ -9,13 +9,12 @@ export function Template() {
     const {data, dispatch, index, setIndex, selectedValues} = useData();
     const [isClickable, setIsClickable] = useState(true);
     const [color, setColor] = useState("#480cec");
-    const [timer, setTimer] = useState(60);
     const navigate = useNavigate();
     let correct_Answers;
 
     function handleSubmit() {
         setIsClickable(true);
-        setTimer(60);
+        // setTimer(60);
         if((index < data.length - 1)) {
             setIndex(val => val + 1);
         } else {
@@ -50,15 +49,13 @@ export function Template() {
        correct_Answers =  correctAnswers(Object.values(data[index].correct_answers), Object.values(data[index].answers));
     }
 
-    
-
     return (
         <div>
             {
                 data.length ?
                 <div className="main">
                     <div className="content-div">
-                        <Timer setTimer={setTimer} timer={timer}/>
+                        {/* <Timer /> */}
                         <div className="question-div">
                             <h2 className="question">{data[index].question}</h2>
                             <div className="answers-div">
@@ -95,7 +92,7 @@ export function Template() {
                         </div>
                     </div>
                     <div className="img-div">
-                        <img src="../../images\question-banner.png" />
+                        <img src="../../images\question-banner.png"  alt="question-banners"/>
                     </div>
                 </div>
                 : 
@@ -104,7 +101,7 @@ export function Template() {
                     <div className="loader">
                         <BouncingBalls  color="#FFC947" width="15px" height="15px"/>
                     </div>
-                </div>
+                </div>           
             } 
         </div>
     )
